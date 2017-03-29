@@ -26,4 +26,11 @@ RUN set -x \
       libffi-dev \
       libssl-dev \
     && apt-get clean -q \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir /ansible
+
+VOLUME ["/ansible"]
+WORKDIR /ansible
+
+ENTRYPOINT ["ansible-playbook"]
+CMD ["playbooks/site.yml"]
