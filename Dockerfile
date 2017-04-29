@@ -16,6 +16,7 @@ RUN set -x \
       python-dev \
       python-pip \
       python-setuptools \
+      sshpass \
     && pip install wheel \
     && pip install \
       ansible==$ANSIBLE_VERSION \
